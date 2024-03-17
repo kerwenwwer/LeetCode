@@ -18,17 +18,23 @@ public:
 };
 */
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> postorder(Node* root) {
+    vector<int> postorder(Node *root)
+    {
         vector<int> ans;
         helper(root, ans);
         return ans;
     }
+
 private:
-    void helper(Node *root, vector<int> &ans){
-        if(!root) return;
-        for(Node *child: root->children){
+    void helper(Node *root, vector<int> &ans)
+    {
+        if (!root)
+            return;
+        for (Node *child : root->children)
+        {
             helper(child, ans);
         }
         ans.push_back(root->val);
